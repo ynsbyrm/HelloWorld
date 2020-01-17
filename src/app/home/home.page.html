@@ -1,0 +1,39 @@
+<ion-header>
+  <!--
+  <ion-toolbar>
+    <ion-title>
+      Welcome
+    </ion-title>
+  </ion-toolbar>
+  -->
+</ion-header>
+<ion-content>
+  <div class="ion-padding" [ngStyle]="{'background-image': 'url(' + bgImage + ')'}" style="height: 100%; width: 100%; background-size: cover; object-fit: resize;">
+    <ion-row style="height: 35%;"></ion-row>
+    <ion-list style="background-color: transparent;">
+      <ion-item [ngStyle]=usernameOpacityValue>
+        <ion-input placeholder="Username" [(ngModel)]=username (ionFocus)=changeUsernameOpacity() 
+                   (ionBlur)=changeUsernameOpacity()></ion-input>
+          <ion-icon name="person" slot="start" style="background-color: white; opacity: 100%;"></ion-icon>
+      </ion-item>
+      <ion-item [ngStyle]=passwordOpacityValue>
+        <ion-input placeholder="Password" type="password" [(ngModel)]=password (ionFocus)=changePasswordOpacity() 
+        (ionBlur)=changePasswordOpacity()></ion-input>
+        <ion-icon name="lock" slot="start"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <ion-row style="height: 5%;"></ion-row>
+    <ion-button expand="block" color="transparent" style="height: 10%; opacity: 100%;" (click)=login()>
+      <ion-thumbnail style="height: inherit; width: inherit;">
+        <ion-img src="assets/icon/download2.png"></ion-img>
+      </ion-thumbnail>
+    </ion-button>
+    <ion-row style="height: 5%;"></ion-row>
+    <ion-button expand="block" color="danger" title="Google" (click)=signInWithGoogle() >Google
+      <ion-icon name="logo-google" slot="start"></ion-icon>
+    </ion-button>
+    <ion-button expand="block" color="primary" title="Facebook" (click)=signInWithGoogle() >Facebook
+      <ion-icon name="logo-facebook" slot="start"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
